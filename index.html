@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Paniolo herds your coding agents to write good code, efficiently. Agentic harness engineering for enterprise AI development teams." />
-  <meta property="og:title" content="Paniolo — Herd Your Coding Agents" />
-  <meta property="og:description" content="Observability-driven harness engineering that turns AI slop into precision code." />
+  <meta name="description" content="Paniolo is precision infrastructure for AI engineering teams. Agentic harness engineering — built between New York and Hawaiʻi." />
+  <meta property="og:title" content="Paniolo — Precision Infrastructure for AI Engineering" />
+  <meta property="og:description" content="Observability-driven harness engineering that makes your coding agents reliable, efficient, and production-ready." />
   <meta property="og:type" content="website" />
-  <title>Paniolo — We Herd Your Coding Agents</title>
+  <title>Paniolo — Precision Infrastructure for AI Engineering</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -18,14 +18,14 @@
         <span class="nav-logo-word">Paniolo</span>
         <span class="nav-logo-tagline">Harness Engineering</span>
       </a>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-menu" role="list">
         <li><a href="#features">Features</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#writing">Writing</a></li>
         <li><a href="pages/about.html">About</a></li>
         <li><a href="#contact" class="nav-cta">Get Early Access</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -37,19 +37,18 @@
     <section class="hero" aria-labelledby="hero-headline">
       <div class="container">
         <div class="hero-grid">
-
-          <div>
+          <div class="hero-copy">
             <div class="hero-eyebrow">
               <div class="hero-eyebrow-line" aria-hidden="true"></div>
               <span class="label">CLI — Early Access</span>
             </div>
             <h1 class="hero-headline" id="hero-headline">
-              We herd your<br>coding agents<br>to write <em>good code.</em>
+              The infrastructure<br>layer for<br><em>autonomous</em><br>engineering.
             </h1>
             <p class="hero-subhead">
-              Paniolo is an agentic harness engineering CLI that gives your AI coding agents
-              project intelligence so that they write to <em>your standards, </em> not against them.
-              Built on peer-reviewed research. Framework-ready.
+              Paniolo builds and evolves the harness around your AI coding agents —
+              giving them project intelligence, observability, and the structural guardrails
+              that turn generated code into production-grade output.
             </p>
             <div class="hero-actions">
               <a href="#contact" class="btn-primary">
@@ -75,21 +74,61 @@
             </div>
             <div class="hero-panel-card">
               <span class="hero-stat-number" data-count="10.1" data-prefix="+" data-suffix=" pp" data-decimals="1">+10.1 pp</span>
-              <span class="hero-stat-label">Cross-family gain (best case)</span>
+              <span class="hero-stat-label">Cross-family performance gain</span>
               <span class="hero-stat-source">Three alternate model families</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- FEATURES — 3 pillars only -->
+    <!-- DIAGRAM -->
+    <div class="diagram-section" aria-label="AHE evolution loop">
+      <div class="container">
+        <div class="diagram-label reveal">
+          <span class="label">The Evolution Loop</span>
+        </div>
+        <div class="diagram-flow reveal">
+          <div class="diagram-node">
+            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-title">Tasks</div>
+            <div class="diagram-node-desc">Real-world coding benchmarks</div>
+          </div>
+          <div class="diagram-arrow" aria-hidden="true">→</div>
+          <div class="diagram-node">
+            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-title">Trajectories</div>
+            <div class="diagram-node-desc">Agent execution traces</div>
+          </div>
+          <div class="diagram-arrow" aria-hidden="true">→</div>
+          <div class="diagram-node diagram-node-accent">
+            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-title">Structured Experience</div>
+            <div class="diagram-node-desc">Distilled root causes</div>
+          </div>
+          <div class="diagram-arrow" aria-hidden="true">→</div>
+          <div class="diagram-node">
+            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-title">Harness Mutation</div>
+            <div class="diagram-node-desc">Falsifiable edits with predictions</div>
+          </div>
+          <div class="diagram-arrow" aria-hidden="true">→</div>
+          <div class="diagram-node diagram-node-accent">
+            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-title">Verified Improvement</div>
+            <div class="diagram-node-desc">Measured, reverted if failing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
     <section class="features" id="features" aria-labelledby="features-title">
-      <div class="container" style="padding-top:4rem;padding-bottom:4rem;">
+      <div class="container features-container">
         <header class="section-header reveal">
           <span class="label">What Paniolo Does</span>
           <h2 class="section-title" id="features-title">Three pillars of<br><em>observability</em></h2>
+          <p class="section-subtext">We were iterating on harness engineering before the industry had a name for it. Now peer-reviewed science confirms what we built toward.</p>
         </header>
         <div class="features-grid" role="list">
 
@@ -102,7 +141,7 @@
               <circle cx="14" cy="8" r="1.5" fill="currentColor"/>
             </svg>
             <h3 class="feature-title">Component<br>Observability</h3>
-            <p class="feature-desc">Every editable harness component — system prompt, tools, middleware, long-term memory — gets a file-level representation. The action space becomes explicit and revertible. No more black-box debugging.</p>
+            <p class="feature-desc">Every harness component — the capstone file, tool descriptions, middleware, skills, sub-agent configs, long-term memory — gets a file-level representation. The action space becomes explicit, auditable, and revertible.</p>
           </article>
 
           <article class="feature-card reveal" role="listitem">
@@ -113,7 +152,7 @@
               <circle cx="30" cy="14" r="2" fill="currentColor"/>
             </svg>
             <h3 class="feature-title">Experience<br>Observability</h3>
-            <p class="feature-desc">Millions of raw trajectory tokens distilled into a layered, drill-down evidence corpus. Your agents consume structured root causes, not raw logs. Signal over noise — at scale.</p>
+            <p class="feature-desc">Raw agent traces are distilled into a layered evidence corpus — structured root causes your evolving harness can actually act on. Signal over noise, systematically. The intelligence layer compounds over time.</p>
           </article>
 
           <article class="feature-card reveal" role="listitem">
@@ -124,21 +163,21 @@
               <circle cx="18" cy="18" r="3" fill="currentColor"/>
             </svg>
             <h3 class="feature-title">Decision<br>Observability</h3>
-            <p class="feature-desc">Every harness edit is paired with a self-declared prediction, verified against the next round's task-level outcomes. Each edit becomes a falsifiable contract. Evolution without trial-and-error collapse.</p>
+            <p class="feature-desc">Every harness edit is paired with a self-declared prediction, verified against next-round outcomes. Each edit becomes a falsifiable contract. Ineffective edits are rolled back. Evolution without collapse.</p>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- STATS BAR -->
-    <div class="stats-bar" aria-label="Research statistics">
+    <!-- STATS -->
+    <div class="stats-bar" aria-label="Research-validated results">
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item reveal">
             <span class="stat-number">
               <span data-count="69.7" data-suffix="%" data-decimals="1">69.7%</span>
-              <span aria-hidden="true" style="color:rgba(245,240,232,0.2);font-size:1.2rem;margin:0 0.4rem">→</span>
+              <span aria-hidden="true" style="color:rgba(245,240,232,0.2);font-size:1.2rem;margin:0 0.35rem">→</span>
               <span data-count="77.0" data-suffix="%" data-decimals="1" style="color:var(--accent-light)">77.0%</span>
             </span>
             <span class="stat-desc">Pass@1 lift via AHE</span>
@@ -146,18 +185,18 @@
           </div>
           <div class="stat-item reveal">
             <span class="stat-number"><span data-count="10" data-suffix=" iters">10 iters</span></span>
-            <span class="stat-desc">Automatic evolution rounds</span>
+            <span class="stat-desc">Autonomous evolution rounds</span>
             <span class="stat-source">~32 hours to full campaign</span>
           </div>
           <div class="stat-item reveal">
             <span class="stat-number"><span data-count="12" data-prefix="-" data-suffix="%" style="color:var(--accent-light)">-12%</span></span>
-            <span class="stat-desc">Token reduction vs seed</span>
-            <span class="stat-source">SWE-bench-verified transfer</span>
+            <span class="stat-desc">Token reduction vs baseline</span>
+            <span class="stat-source">Better results, lower cost</span>
           </div>
           <div class="stat-item reveal">
             <span class="stat-number"><span data-count="3" data-suffix=" families">3 families</span></span>
             <span class="stat-desc">Cross-model portability</span>
-            <span class="stat-source">GPT, Qwen, Gemini, DeepSeek</span>
+            <span class="stat-source">GPT · Qwen · Gemini · DeepSeek</span>
           </div>
         </div>
       </div>
@@ -168,19 +207,27 @@
       <div class="container">
         <header class="section-header reveal">
           <span class="label">Peer-Reviewed Foundation</span>
-          <h2 class="section-title" id="research-title">Built on <em>published science,</em><br>not intuition</h2>
+          <h2 class="section-title" id="research-title">Built on <em>published science,</em><br>not speculation</h2>
         </header>
         <div class="research-inner">
           <aside class="reveal">
             <blockquote class="research-quote">
               "Harness design materially shifts task completion on long-horizon coding benchmarks, even with the base model held fixed."
             </blockquote>
-            <p style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal-light);margin-top:1rem;">— Lin et al., ICLR 2026</p>
+            <p class="research-attribution">— Lin et al., ICLR 2026</p>
+            <div style="margin-top:2rem;">
+              <p class="research-also-note">OpenAI and Anthropic agree.</p>
+              <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem;">
+                <span class="research-tag">OpenAI · Harness Engineering</span>
+                <span class="research-tag">Anthropic · Effective Harnesses</span>
+              </div>
+            </div>
           </aside>
           <div class="research-body reveal">
-            <p>Paniolo is grounded in <strong>Agentic Harness Engineering (AHE)</strong>, published at ICLR 2026 by researchers from Fudan University, Peking University, and Shanghai Qiji Zhifeng. The paper introduces a closed-loop observability framework that autonomously evolves coding-agent harnesses without requiring base-model retraining.</p>
-            <p>The core insight: harness evolution was bottlenecked by <em>observability</em>, not agent capability. Once the evolution agent receives structured context over a clear action space, it reliably converges on better harness designs — turning every edit into a falsifiable contract.</p>
-            <p>AHE outperforms every human-designed baseline and self-evolving baseline. The frozen harness transfers to SWE-bench-verified and yields consistent gains across three alternate model families — evidence that evolved components encode <em>general engineering experience</em>, not benchmark-specific tuning.</p>
+            <p>Paniolo is grounded in <strong>Agentic Harness Engineering (AHE)</strong>, published at ICLR 2026 by researchers from Fudan University, Peking University, and Shanghai Qiji Zhifeng. The paper introduces a closed-loop observability framework that autonomously evolves coding-agent harnesses without base-model retraining.</p>
+            <p>The result: ten iterations lift pass@1 from 69.7% to 77.0%, surpassing every human-designed baseline — OpenCode, Terminus-2, and Codex — and both self-evolving baselines. The frozen harness transfers to SWE-bench-verified and yields consistent gains of +5.1 to +10.1 pp across three alternate model families.</p>
+            <p>Critically, the evolved harness uses 12% fewer tokens than the seed. As token pricing increases for enterprises, this efficiency advantage compounds. Better performance and lower cost are not in tension — harness quality is the resolution.</p>
+            <p>Paniolo was already building toward this. We treat every agent error as infrastructure debt, every correction as a permanent improvement to the intelligence layer. The science validated the architecture we were already constructing.</p>
             <div style="margin-top:1.5rem;">
               <span class="research-tag">Terminal-Bench 2</span>
               <span class="research-tag">SWE-bench-verified</span>
@@ -193,15 +240,15 @@
       </div>
     </section>
 
-    <!-- SUBSTACK -->
+    <!-- WRITING -->
     <section class="substack-section" id="writing" aria-labelledby="writing-title">
       <div class="container">
         <header class="substack-header reveal">
           <div>
-            <span class="label">From the Founder</span>
+            <span class="label">From the Founders</span>
             <h2 class="section-title" id="writing-title">Harnessed</h2>
           </div>
-          <a href="https://open.substack.com/pub/bkinsey808/p/a-review-of-agentic-harness-engineering?r=6l5fpr&utm_medium=ios" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <a href="https://bkinsey808.substack.com/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
             Follow on Substack
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -214,11 +261,15 @@
             <div>
               <div class="substack-meta">
                 <span class="substack-issue">Issue No. 001</span>
-                <time class="substack-date" datetime="2026-05-05">May 5, 2026</time>
+                <time class="substack-date" datetime="2026-05-27">May 27, 2026</time>
+                <span class="substack-author">Anabel Kinsey</span>
               </div>
               <h3 class="substack-title">A Review of Agentic Harness Engineering</h3>
               <p class="substack-excerpt">
-                A founder's deep-dive into the ICLR 2026 paper that validated everything we've been building toward. AHE introduces three observability pillars — component, experience, and decision — that together turn harness evolution from manual craft into a closed, autonomous loop. Ten iterations lift pass@1 from 69.7% to 77.0%, surpassing every human-designed baseline. This is the research Paniolo is built on.
+                Researchers at Fudan, Peking University, and Shanghai Qiji Zhifeng confirm what we have been building on: harness engineering is vital to AI performance in code. Their methodology autonomously evolves scaffolding — tools, middleware, memory, and the capstone file — improving agent performance without touching the foundation model. Ten iterations. 69.7% to 77.0%. Fewer tokens. This is the research Paniolo is built on.
+              </p>
+              <p class="substack-excerpt" style="margin-top:.75rem;font-style:italic;color:var(--charcoal-light);">
+                Next: a deep dive into QMD, linting, and structured tooling.
               </p>
             </div>
             <a href="https://open.substack.com/pub/bkinsey808/p/a-review-of-agentic-harness-engineering?r=6l5fpr&utm_medium=ios" target="_blank" rel="noopener noreferrer" class="substack-read-link">
@@ -231,9 +282,10 @@
           <div class="substack-visual" aria-hidden="true">
             <div class="substack-visual-text">
               <p class="substack-visual-headline">
-                "Observability is the bottleneck — not agent capability. Fix that, and harnesses evolve themselves."
+                "The system prompt is the weakest component. Tools, middleware, and memory carry the gain."
               </p>
-              <a href="https://open.substack.com/pub/bkinsey808/p/a-review-of-agentic-harness-engineering?r=6l5fpr&utm_medium=ios" target="_blank" rel="noopener noreferrer" class="substack-follow">
+              <p class="substack-visual-sub">— Paniolo review of AHE, ICLR 2026</p>
+              <a href="https://bkinsey808.substack.com/" target="_blank" rel="noopener noreferrer" class="substack-follow">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <rect x="1" y="4" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.2"/>
                   <path d="M1 7h12" stroke="currentColor" stroke-width="1.2"/>
@@ -244,7 +296,6 @@
             </div>
           </div>
         </article>
-
       </div>
     </section>
 
@@ -252,25 +303,28 @@
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact-grid">
-
           <div>
             <header class="section-header reveal">
               <span class="label">Work With Us</span>
-              <h2 class="section-title" id="contact-title">Get early<br><em>access.</em></h2>
+              <h2 class="section-title" id="contact-title">Build agents that<br><em>improve with experience.</em></h2>
             </header>
             <div class="reveal">
-              <p class="contact-pitch">We're selectively onboarding enterprise engineering teams and investors ahead of our CLI launch. If you're tired of AI slop slowing your team down, let's talk.</p>
+              <p class="contact-pitch">We are selectively onboarding enterprise engineering teams and investors ahead of our CLI launch. If your team's AI output does not yet meet your engineering standards, Paniolo is the infrastructure layer that closes the gap.</p>
               <div class="contact-detail">
                 <span class="contact-detail-label">For Teams</span>
-                <span class="contact-detail-value">Early access to the Paniolo CLI harness builder + white-glove onboarding for your repo.</span>
+                <span class="contact-detail-value">Early access to the Paniolo CLI — harness builder, intelligence layer scaffolding, and white-glove onboarding for your repo.</span>
               </div>
               <div class="contact-detail">
                 <span class="contact-detail-label">For VCs</span>
-                <span class="contact-detail-value">We're raising a pre-seed round. Share your fund and we'll send the pitch deck directly.</span>
+                <span class="contact-detail-value">We are raising a pre-seed round. Share your fund and we will send the deck directly.</span>
               </div>
               <div class="contact-detail">
                 <span class="contact-detail-label">Based</span>
-                <span class="contact-detail-value">Honolulu, Hawaiʻi &amp; Remote</span>
+                <span class="contact-detail-value">New York &amp; Honolulu, Hawaiʻi</span>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail-label">Email</span>
+                <span class="contact-detail-value">anabelkinsey@gmail.com · bkinsey@gmail.com</span>
               </div>
             </div>
           </div>
@@ -304,7 +358,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label" for="cf-message">Message</label>
-                <textarea class="form-textarea" id="cf-message" name="message" placeholder="Tell us about your current AI coding setup and biggest pain point…" rows="4"></textarea>
+                <textarea class="form-textarea" id="cf-message" name="message" placeholder="Tell us about your engineering stack and where AI output is falling short…" rows="4"></textarea>
               </div>
               <button type="submit" class="btn-primary">
                 Send Message
@@ -313,17 +367,15 @@
                 </svg>
               </button>
             </form>
-
             <div id="form-success" role="alert" style="display:none;padding:2.5rem;background:var(--cream);border:1px solid var(--cream-border);text-align:center;margin-top:1rem;">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="margin:0 auto 1rem;" aria-hidden="true">
                 <circle cx="16" cy="16" r="14" stroke="var(--accent)" stroke-width="1.5"/>
                 <path d="M10 16l4 4 8-8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <p style="font-family:var(--font-display);font-size:1.4rem;font-weight:300;color:var(--charcoal);">Message sent.</p>
-              <p style="font-size:.88rem;font-weight:300;color:var(--charcoal-mid);margin-top:.5rem;">We'll be in touch shortly.</p>
+              <p style="font-size:.88rem;font-weight:300;color:var(--charcoal-mid);margin-top:.5rem;">We will be in touch shortly.</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -335,22 +387,24 @@
       <div class="footer-inner">
         <div>
           <div class="footer-logo">Paniolo</div>
-          <div style="font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.35);margin-top:.3rem;">We Herd Your Coding Agents</div>
+          <div class="footer-tagline">Precision Infrastructure for AI Engineering</div>
+          <div class="footer-location">New York · Honolulu, Hawaiʻi</div>
         </div>
         <nav aria-label="Footer navigation">
           <ul class="footer-links" role="list">
             <li><a href="#features">Features</a></li>
             <li><a href="#research">Research</a></li>
+            <li><a href="#writing">Writing</a></li>
             <li><a href="pages/about.html">About</a></li>
-            <li><a href="https://open.substack.com/pub/bkinsey808/p/a-review-of-agentic-harness-engineering?r=6l5fpr&utm_medium=ios" target="_blank" rel="noopener noreferrer">Substack</a></li>
+            <li><a href="https://bkinsey808.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <div class="footer-copy">© 2026 Paniolo · Honolulu, Hawaiʻi</div>
+        <div class="footer-copy">© 2026 Paniolo · New York &amp; Honolulu, Hawaiʻi</div>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
