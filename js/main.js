@@ -1,6 +1,6 @@
 "use strict";
 
-// ── Nav scroll
+// ── Nav scroll ──────────────────────────────────────────────────────
 var nav = document.querySelector('nav');
 if (nav) {
   var onScroll = function() {
@@ -14,12 +14,14 @@ if (nav) {
   onScroll();
 }
 
-// ── Mobile hamburger
+// ── Mobile hamburger ────────────────────────────────────────────────
 var toggle = document.querySelector('.nav-toggle');
 var navLinks = document.querySelector('.nav-links');
 
 if (toggle && navLinks) {
-  toggle.addEventListener('click', function() {
+
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
     var isOpen = navLinks.classList.toggle('open');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     var bars = toggle.querySelectorAll('span');
@@ -34,6 +36,7 @@ if (toggle && navLinks) {
     }
   });
 
+  // Close on link tap
   var links = navLinks.querySelectorAll('a');
   for (var i = 0; i < links.length; i++) {
     links[i].addEventListener('click', function() {
@@ -46,8 +49,9 @@ if (toggle && navLinks) {
     });
   }
 
+  // Close on outside tap
   document.addEventListener('click', function(e) {
-    if (!nav.contains(e.target)) {
+    if (nav && !nav.contains(e.target)) {
       navLinks.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
       var bars = toggle.querySelectorAll('span');
@@ -58,12 +62,12 @@ if (toggle && navLinks) {
   });
 }
 
-// ── Scroll reveal
+// ── Scroll reveal ────────────────────────────────────────────────────
 if ('IntersectionObserver' in window) {
   var revealObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        var delay = parseInt(entry.target.dataset.delay || '0', 10);
+        var delay = parseInt(entry.target.getAttribute('data-delay') || '0', 10);
         setTimeout(function() {
           entry.target.classList.add('visible');
         }, delay);
@@ -73,13 +77,13 @@ if ('IntersectionObserver' in window) {
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
   var revealEls = document.querySelectorAll('.reveal');
-  for (var i = 0; i < revealEls.length; i++) {
-    revealEls[i].dataset.delay = String(i * 60);
-    revealObs.observe(revealEls[i]);
+  for (var ri = 0; ri < revealEls.length; ri++) {
+    revealEls[ri].setAttribute('data-delay', String(ri * 60));
+    revealObs.observe(revealEls[ri]);
   }
 }
 
-// ── Counter animation
+// ── Counter animation ────────────────────────────────────────────────
 function animateCounter(el, target, suffix, prefix, decimals) {
   suffix = suffix || '';
   prefix = prefix || '';
@@ -102,10 +106,10 @@ if ('IntersectionObserver' in window) {
         var el = entry.target;
         animateCounter(
           el,
-          parseFloat(el.dataset.count || '0'),
-          el.dataset.suffix || '',
-          el.dataset.prefix || '',
-          parseInt(el.dataset.decimals || '0', 10)
+          parseFloat(el.getAttribute('data-count') || '0'),
+          el.getAttribute('data-suffix') || '',
+          el.getAttribute('data-prefix') || '',
+          parseInt(el.getAttribute('data-decimals') || '0', 10)
         );
         counterObs.unobserve(el);
       }
@@ -113,12 +117,12 @@ if ('IntersectionObserver' in window) {
   }, { threshold: 0.5 });
 
   var countEls = document.querySelectorAll('[data-count]');
-  for (var i = 0; i < countEls.length; i++) {
-    counterObs.observe(countEls[i]);
+  for (var ci = 0; ci < countEls.length; ci++) {
+    counterObs.observe(countEls[ci]);
   }
 }
 
-// ── Contact form
+// ── Contact form ──────────────────────────────────────────────────────
 var form = document.querySelector('#contact-form');
 var formSuccess = document.querySelector('#form-success');
 if (form) {
@@ -133,17 +137,17 @@ if (form) {
   });
 }
 
-// ── Smooth scroll
+// ── Anchor scroll ─────────────────────────────────────────────────────
 var anchors = document.querySelectorAll('a[href^="#"]');
-for (var i = 0; i < anchors.length; i++) {
-  anchors[i].addEventListener('click', function(e) {
+for (var ai = 0; ai < anchors.length; ai++) {
+  anchors[ai].addEventListener('click', function(e) {
     var href = this.getAttribute('href');
     if (!href || href === '#') return;
     var target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       var navEl = document.querySelector('nav');
-      var offset = (navEl ? navEl.offsetHeight : 64) + 12;
+      var offset = (navEl ? navEl.offsetHeight : 64) + 16;
       var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top: top, behavior: 'smooth' });
     }
