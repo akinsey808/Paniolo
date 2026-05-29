@@ -1,25 +1,21 @@
 "use strict";
 
-// ── Page load fade-in ─────────────────────────────────────────────────
+// ── Page load fade-in
 document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.add('loaded');
 });
 
-// ── Nav scroll ──────────────────────────────────────────────────────
+// ── Nav scroll
 var nav = document.querySelector('body > nav');
 if (nav) {
   var onScroll = function() {
-    if (window.scrollY > 20) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
+    nav.classList.toggle('scrolled', window.scrollY > 20);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 }
 
-// ── Mobile hamburger ────────────────────────────────────────────────
+// ── Mobile hamburger
 var toggle = document.querySelector('.nav-toggle');
 var navLinks = document.querySelector('.nav-links');
 
@@ -30,9 +26,10 @@ if (toggle && navLinks) {
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     var bars = toggle.querySelectorAll('span');
     if (isOpen) {
-      if (bars[0]) bars[0].style.cssText = 'transform:rotate(45deg) translate(4px,4px)';
-      if (bars[1]) bars[1].style.cssText = 'opacity:0';
-      if (bars[2]) bars[2].style.cssText = 'transform:rotate(-45deg) translate(4px,-4px)';
+      // Proper X: top bar rotates down-right, bottom bar rotates up-right, middle disappears
+      if (bars[0]) bars[0].style.cssText = 'transform:translateY(6.5px) rotate(45deg)';
+      if (bars[1]) bars[1].style.cssText = 'opacity:0;transform:scaleX(0)';
+      if (bars[2]) bars[2].style.cssText = 'transform:translateY(-6.5px) rotate(-45deg)';
     } else {
       for (var i = 0; i < bars.length; i++) { bars[i].removeAttribute('style'); }
     }
@@ -58,7 +55,7 @@ if (toggle && navLinks) {
   });
 }
 
-// ── Scroll reveal ────────────────────────────────────────────────────
+// ── Scroll reveal
 if ('IntersectionObserver' in window) {
   var revealObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -77,7 +74,7 @@ if ('IntersectionObserver' in window) {
   }
 }
 
-// ── Counter animation ────────────────────────────────────────────────
+// ── Counter animation
 function animateCounter(el, target, suffix, prefix, decimals) {
   suffix = suffix || ''; prefix = prefix || ''; decimals = decimals || 0;
   var duration = 1600;
@@ -110,20 +107,20 @@ if ('IntersectionObserver' in window) {
   for (var ci = 0; ci < countEls.length; ci++) { counterObs.observe(countEls[ci]); }
 }
 
-// ── Dynamic contact form pitch text ──────────────────────────────────
+// ── Dynamic contact copy based on dropdown
 var typeSelect = document.querySelector('#cf-type');
 var contactPitch = document.querySelector('#contact-pitch');
-var messagePlaceholder = document.querySelector('#cf-message');
+var messageField = document.querySelector('#cf-message');
 
-var pitchText = {
+var pitchMap = {
   'engineering-team': 'Early access to the Paniolo CLI — harness builder, intelligence layer scaffolding, and white-glove onboarding for your codebase. Tell us about your current AI coding setup and the biggest gap between what your agents produce and what your standards require.',
-  'vc': 'We are raising a pre-seed round. Paniolo is building the infrastructure layer for enterprise AI engineering teams — the picks-and-shovels play for the AI coding agent wave. Share your fund details and we will send the pitch deck and data room access.',
-  'developer': 'Individual developers get CLI early access to build and evolve their own project intelligence layer. Tell us what you are building and what AI tools you currently use.',
-  'enterprise': 'Enterprise teams get dedicated onboarding, custom harness templates, and a structured rollout plan. Tell us about your engineering org size and current AI tooling.',
+  'vc': 'We are raising a pre-seed round. Paniolo is building the infrastructure layer for enterprise AI engineering — the picks-and-shovels play for the agent wave. Share your fund details and we will send the pitch deck and data room access.',
+  'developer': 'Individual developers get CLI early access to build and evolve their own project intelligence layer. Tell us what you are building and which AI tools you currently use.',
+  'enterprise': 'Enterprise teams get dedicated onboarding, custom harness templates, and a structured rollout plan. Tell us about your engineering org and current AI tooling.',
   'other': 'Tell us about yourself and what brought you to Paniolo. We will find the right way to work together.'
 };
 
-var placeholderText = {
+var placeholderMap = {
   'engineering-team': 'Describe your stack and where AI output falls short of your standards…',
   'vc': 'Share your fund name and investment focus…',
   'developer': 'Tell us what you are building and which AI coding tools you use…',
@@ -134,20 +131,20 @@ var placeholderText = {
 if (typeSelect && contactPitch) {
   typeSelect.addEventListener('change', function() {
     var val = typeSelect.value;
-    if (pitchText[val]) {
+    if (pitchMap[val]) {
       contactPitch.style.opacity = '0';
       setTimeout(function() {
-        contactPitch.textContent = pitchText[val];
+        contactPitch.textContent = pitchMap[val];
         contactPitch.style.opacity = '1';
       }, 200);
     }
-    if (messagePlaceholder && placeholderText[val]) {
-      messagePlaceholder.setAttribute('placeholder', placeholderText[val]);
+    if (messageField && placeholderMap[val]) {
+      messageField.setAttribute('placeholder', placeholderMap[val]);
     }
   });
 }
 
-// ── Contact form submit ───────────────────────────────────────────────
+// ── Contact form submit
 var form = document.querySelector('#contact-form');
 var formSuccess = document.querySelector('#form-success');
 if (form) {
@@ -162,7 +159,7 @@ if (form) {
   });
 }
 
-// ── Anchor scroll ─────────────────────────────────────────────────────
+// ── Anchor scroll
 var anchors = document.querySelectorAll('a[href^="#"]');
 for (var ai = 0; ai < anchors.length; ai++) {
   anchors[ai].addEventListener('click', function(e) {
