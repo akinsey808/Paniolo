@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Paniolo is precision infrastructure for AI engineering teams. Agentic harness engineering — built between New York and Hawaiʻi." />
-  <meta property="og:title" content="Paniolo — Precision Infrastructure for AI Engineering" />
-  <meta property="og:description" content="Observability-driven harness engineering that makes your coding agents reliable, efficient, and production-ready." />
-  <meta property="og:type" content="website" />
   <title>Paniolo — Precision Infrastructure for AI Engineering</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -19,7 +16,7 @@
         <span class="nav-logo-tagline">Harness Engineering</span>
       </a>
       <ul class="nav-links" id="nav-menu" role="list">
-        <li><a href="#features">Features</a></li>
+        <li><a href="#principles">Principles</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#writing">Writing</a></li>
         <li><a href="pages/about.html">About</a></li>
@@ -90,31 +87,31 @@
         </div>
         <div class="diagram-flow reveal">
           <div class="diagram-node">
-            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-icon">◈</div>
             <div class="diagram-node-title">Tasks</div>
             <div class="diagram-node-desc">Real-world coding benchmarks</div>
           </div>
           <div class="diagram-arrow" aria-hidden="true">→</div>
           <div class="diagram-node">
-            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-icon">◈</div>
             <div class="diagram-node-title">Trajectories</div>
             <div class="diagram-node-desc">Agent execution traces</div>
           </div>
           <div class="diagram-arrow" aria-hidden="true">→</div>
           <div class="diagram-node diagram-node-accent">
-            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-icon">◈</div>
             <div class="diagram-node-title">Structured Experience</div>
             <div class="diagram-node-desc">Distilled root causes</div>
           </div>
           <div class="diagram-arrow" aria-hidden="true">→</div>
           <div class="diagram-node">
-            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-icon">◈</div>
             <div class="diagram-node-title">Harness Mutation</div>
             <div class="diagram-node-desc">Falsifiable edits with predictions</div>
           </div>
           <div class="diagram-arrow" aria-hidden="true">→</div>
           <div class="diagram-node diagram-node-accent">
-            <div class="diagram-node-icon">⬡</div>
+            <div class="diagram-node-icon">◈</div>
             <div class="diagram-node-title">Verified Improvement</div>
             <div class="diagram-node-desc">Measured, reverted if failing</div>
           </div>
@@ -122,13 +119,45 @@
       </div>
     </div>
 
-    <!-- FEATURES -->
-    <section class="features" id="features" aria-labelledby="features-title">
-      <div class="container features-container">
+    <!-- CORE PRINCIPLES (primary, from Ben's framework) -->
+    <section class="pillars" id="principles" aria-labelledby="pillars-title">
+      <div class="container">
         <header class="section-header reveal">
-          <span class="label">What Paniolo Does</span>
+          <span class="label">Core Principles</span>
+          <h2 class="section-title" id="pillars-title">The foundation of<br><em>reliable AI engineering</em></h2>
+          <p class="section-subtext">Built from years of production experience — before the industry named it harness engineering.</p>
+        </header>
+        <div class="pillars-grid">
+
+          <article class="pillar-card reveal">
+            <span class="pillar-number">01</span>
+            <h3 class="pillar-title">Every AI error is infrastructure debt.</h3>
+            <p class="pillar-desc">When an agent makes a mistake, the right response is not to fix the output and move on. It is to update the harness so the same failure is structurally prevented. Errors are signals. Signals become infrastructure.</p>
+          </article>
+
+          <article class="pillar-card reveal">
+            <span class="pillar-number">02</span>
+            <h3 class="pillar-title">Harness quality is model-agnostic.</h3>
+            <p class="pillar-desc">A well-engineered harness outperforms a better base model with a weak one. This is empirically validated at ICLR 2026, and it is the core premise Paniolo is built on. The infrastructure layer is the lever.</p>
+          </article>
+
+          <article class="pillar-card reveal">
+            <span class="pillar-number">03</span>
+            <h3 class="pillar-title">Observability before optimization.</h3>
+            <p class="pillar-desc">You cannot reliably improve what you cannot see. Every component, trajectory, and decision in the harness must be auditable before any evolution loop can be trusted. Structure precedes speed.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OBSERVABILITY FRAMEWORK (supporting, from AHE research) -->
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="container" style="padding-top:4rem;padding-bottom:4rem;">
+        <header class="section-header reveal">
+          <span class="label">Research-Validated Framework</span>
           <h2 class="section-title" id="features-title">Three pillars of<br><em>observability</em></h2>
-          <p class="section-subtext">We were iterating on harness engineering before the industry had a name for it. Now peer-reviewed science confirms what we built toward.</p>
+          <p class="section-subtext">Validated at ICLR 2026. The methodology that makes autonomous harness evolution reliable.</p>
         </header>
         <div class="features-grid" role="list">
 
@@ -141,7 +170,7 @@
               <circle cx="14" cy="8" r="1.5" fill="currentColor"/>
             </svg>
             <h3 class="feature-title">Component<br>Observability</h3>
-            <p class="feature-desc">Every harness component — the capstone file, tool descriptions, middleware, skills, sub-agent configs, long-term memory — gets a file-level representation. The action space becomes explicit, auditable, and revertible.</p>
+            <p class="feature-desc">Every harness component — capstone file, tool descriptions, middleware, skills, sub-agent configs, long-term memory — gets a file-level representation. The action space becomes explicit, auditable, and revertible.</p>
           </article>
 
           <article class="feature-card reveal" role="listitem">
@@ -152,7 +181,7 @@
               <circle cx="30" cy="14" r="2" fill="currentColor"/>
             </svg>
             <h3 class="feature-title">Experience<br>Observability</h3>
-            <p class="feature-desc">Raw agent traces are distilled into a layered evidence corpus — structured root causes your evolving harness can actually act on. Signal over noise, systematically. The intelligence layer compounds over time.</p>
+            <p class="feature-desc">Raw agent traces are distilled into a structured evidence corpus — root causes your evolving harness can act on. The intelligence layer compounds over time without requiring manual inspection.</p>
           </article>
 
           <article class="feature-card reveal" role="listitem">
@@ -163,7 +192,7 @@
               <circle cx="18" cy="18" r="3" fill="currentColor"/>
             </svg>
             <h3 class="feature-title">Decision<br>Observability</h3>
-            <p class="feature-desc">Every harness edit is paired with a self-declared prediction, verified against next-round outcomes. Each edit becomes a falsifiable contract. Ineffective edits are rolled back. Evolution without collapse.</p>
+            <p class="feature-desc">Every harness edit is paired with a self-declared prediction, verified against next-round outcomes. Each edit becomes a falsifiable contract. Ineffective edits are rolled back automatically.</p>
           </article>
 
         </div>
@@ -225,8 +254,8 @@
           </aside>
           <div class="research-body reveal">
             <p>Paniolo is grounded in <strong>Agentic Harness Engineering (AHE)</strong>, published at ICLR 2026 by researchers from Fudan University, Peking University, and Shanghai Qiji Zhifeng. The paper introduces a closed-loop observability framework that autonomously evolves coding-agent harnesses without base-model retraining.</p>
-            <p>The result: ten iterations lift pass@1 from 69.7% to 77.0%, surpassing every human-designed baseline — OpenCode, Terminus-2, and Codex — and both self-evolving baselines. The frozen harness transfers to SWE-bench-verified and yields consistent gains of +5.1 to +10.1 pp across three alternate model families.</p>
-            <p>Critically, the evolved harness uses 12% fewer tokens than the seed. As token pricing increases for enterprises, this efficiency advantage compounds. Better performance and lower cost are not in tension — harness quality is the resolution.</p>
+            <p>Ten iterations lift pass@1 from 69.7% to 77.0%, surpassing every human-designed baseline — OpenCode, Terminus-2, and Codex — and both self-evolving baselines. The frozen harness transfers to SWE-bench-verified and yields consistent gains of +5.1 to +10.1 pp across three alternate model families.</p>
+            <p>The evolved harness uses 12% fewer tokens than the seed. As token pricing increases, this efficiency advantage compounds. Better performance and lower cost are not in tension — harness quality is the resolution.</p>
             <p>Paniolo was already building toward this. We treat every agent error as infrastructure debt, every correction as a permanent improvement to the intelligence layer. The science validated the architecture we were already constructing.</p>
             <div style="margin-top:1.5rem;">
               <span class="research-tag">Terminal-Bench 2</span>
@@ -266,9 +295,9 @@
               </div>
               <h3 class="substack-title">A Review of Agentic Harness Engineering</h3>
               <p class="substack-excerpt">
-                Researchers at Fudan, Peking University, and Shanghai Qiji Zhifeng confirm what we have been building on: harness engineering is vital to AI performance in code. Their methodology autonomously evolves scaffolding — tools, middleware, memory, and the capstone file — improving agent performance without touching the foundation model. Ten iterations. 69.7% to 77.0%. Fewer tokens. This is the research Paniolo is built on.
+                Researchers at Fudan, Peking University, and Shanghai Qiji Zhifeng confirm what we have been building on: harness engineering is vital to AI performance in code. Ten iterations of autonomous evolution lift pass@1 from 69.7% to 77.0%, using 12% fewer tokens. Better results, lower cost. This is the research Paniolo is built on.
               </p>
-              <p class="substack-excerpt" style="margin-top:.75rem;font-style:italic;color:var(--charcoal-light);">
+              <p class="substack-excerpt" style="margin-top:.75rem;font-style:italic;color:var(--charcoal-light);font-size:.84rem;">
                 Next: a deep dive into QMD, linting, and structured tooling.
               </p>
             </div>
@@ -281,9 +310,7 @@
           </div>
           <div class="substack-visual" aria-hidden="true">
             <div class="substack-visual-text">
-              <p class="substack-visual-headline">
-                "The system prompt is the weakest component. Tools, middleware, and memory carry the gain."
-              </p>
+              <p class="substack-visual-headline">"The system prompt is the weakest component. Tools, middleware, and memory carry the gain."</p>
               <p class="substack-visual-sub">— Paniolo review of AHE, ICLR 2026</p>
               <a href="https://bkinsey808.substack.com/" target="_blank" rel="noopener noreferrer" class="substack-follow">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -309,22 +336,10 @@
               <h2 class="section-title" id="contact-title">Build agents that<br><em>improve with experience.</em></h2>
             </header>
             <div class="reveal">
-              <p class="contact-pitch">We are selectively onboarding enterprise engineering teams and investors ahead of our CLI launch. If your team's AI output does not yet meet your engineering standards, Paniolo is the infrastructure layer that closes the gap.</p>
-              <div class="contact-detail">
-                <span class="contact-detail-label">For Teams</span>
-                <span class="contact-detail-value">Early access to the Paniolo CLI — harness builder, intelligence layer scaffolding, and white-glove onboarding for your repo.</span>
-              </div>
-              <div class="contact-detail">
-                <span class="contact-detail-label">For VCs</span>
-                <span class="contact-detail-value">We are raising a pre-seed round. Share your fund and we will send the deck directly.</span>
-              </div>
+              <p class="contact-pitch" id="contact-pitch">We are selectively onboarding enterprise engineering teams and investors ahead of our CLI launch. Tell us about your team and we will be in touch.</p>
               <div class="contact-detail">
                 <span class="contact-detail-label">Based</span>
                 <span class="contact-detail-value">New York &amp; Honolulu, Hawaiʻi</span>
-              </div>
-              <div class="contact-detail">
-                <span class="contact-detail-label">Email</span>
-                <span class="contact-detail-value">anabelkinsey@gmail.com · bkinsey@gmail.com</span>
               </div>
             </div>
           </div>
@@ -392,7 +407,7 @@
         </div>
         <nav aria-label="Footer navigation">
           <ul class="footer-links" role="list">
-            <li><a href="#features">Features</a></li>
+            <li><a href="#principles">Principles</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#writing">Writing</a></li>
             <li><a href="pages/about.html">About</a></li>
